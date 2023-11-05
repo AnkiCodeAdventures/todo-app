@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Box, Button, Typography } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+
+// const todos = [
+//   { task: "Eat Breakfast", id: "1" },
+//   { task: "Make todo", id: "2" },
+// ];
 
 function App() {
-  const [count, setCount] = useState(0)
+  function handleAdd() {
+    console.log("working");
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Box
+      textAlign="center"
+      color="aquamarine"
+      bgcolor="black"
+      height="100vh"
+      padding="1em 2em"
+    >
+      <Typography variant="h3" component="h1">
+        TODO
+      </Typography>
+      <Box textAlign="right">
+        <Button variant="outlined" onClick={handleAdd}>
+          <AddIcon /> Add
+        </Button>
+      </Box>
+    </Box>
+  );
 }
 
-export default App
+export default App;
